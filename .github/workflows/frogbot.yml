@@ -9,10 +9,10 @@ jobs:
   frogbot-scan:
     runs-on: ubuntu-latest
     
-    # strategy:
-    #   matrix:
-    #     # The repository scanning will be triggered periodically on the following branches.
-    #     branch: ["main"]
+    strategy:
+      matrix:
+        # The repository scanning will be triggered periodically on the following branches.
+        branch: ["main"]
     steps: 
     #   - name: Setup JFrog CLI OIDC
     #     uses: jfrog/setup-jfrog-cli@v4
@@ -25,9 +25,8 @@ jobs:
        - name: frogbot
          uses: jfrog/frogbot@v2
          env:
-           JF_URL: ${{ vars.JF_URL }}
-           JF_GIT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-         with:
-          oidc-provider-name: jfrog-github
-          oidc-audience: jfrog-github
+          JF_URL: ${{ secrets.JF_URL }}
+          JF_ACCESS_TOKEN: ${{ secrets.JF_ACCESS_TOKEN }}
+          JF_GIT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          JF_GIT_BASE_BRANCH: ${{ matrix.branch }}
        
