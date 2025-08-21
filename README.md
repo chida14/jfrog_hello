@@ -1,3 +1,5 @@
+[![Scanned by Frogbot](https://raw.github.com/jfrog/frogbot/master/images/frogbot-badge.svg)](https://docs.jfrog-applications.jfrog.io/jfrog-applications/frogbot)
+
 # GitHub Actions and JFrog Platform Integration Example
 
 This repository contains an example of how to integrate GitHub Actions with the JFrog Platform. The purpose of this repository is to provide an example of how to build and deploy an NPM package to the JFrog platform using GitHub Actions.
