@@ -18,7 +18,7 @@ jobs:
        - name: Setup JFrog CLI OIDC
          uses: jfrog/setup-jfrog-cli@v4
          env:
-           JF_URL: ${{ vars.JF_URL }}
+           JF_URL: https://chida1.jfrog.io
          with:
            oidc-provider-name: github 
            oidc-audience: jfrog-github
