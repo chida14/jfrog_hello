@@ -1,0 +1,18 @@
+name: "Frogbot Security Scan"
+on: 
+  push: # Triggers scan-repo flow for every push to the specified branches
+    branches:
+      - main
+
+
+jobs:
+  frogbot-scan:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        # The repository scanning will be triggered periodically on the following branches.
+        branch: ["main"]
+
+    steps:
+      - uses: jfrog/frogbot@v2
+       
